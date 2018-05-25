@@ -16,14 +16,15 @@ public class Antenna {
     private float frequency;
     private double position[] = new double[2];
     List<Poi> poiList = new ArrayList<>();
-    private int totalPois;
+    private Long totalPois;
     private AngleOfView angleOfView = null;
     private Date createdAt = new Date();
 
     public Antenna() {
     }
 
-    public Antenna(String name, float frequency, double[] position, List<Poi> poiList, int totalPois, AngleOfView angleOfView) {
+    public Antenna(String id, String name, float frequency, double[] position, List<Poi> poiList, Long totalPois, AngleOfView angleOfView) {
+        this.id = id;
         this.name = name;
         this.frequency = frequency;
         this.position = position;
@@ -72,11 +73,11 @@ public class Antenna {
         this.poiList = poiList;
     }
 
-    public int getTotalPois() {
+    public Long getTotalPois() {
         return totalPois;
     }
 
-    public void setTotalPois(int totalPois) {
+    public void setTotalPois(Long totalPois) {
         this.totalPois = totalPois;
     }
 
@@ -94,19 +95,5 @@ public class Antenna {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
-    }
-
-    @Override
-    public String toString() {
-        return "Antenna{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", frequency=" + frequency +
-                ", position=" + Arrays.toString(position) +
-                ", poiList=" + poiList +
-                ", totalPois=" + totalPois +
-                ", angleOfView=" + angleOfView +
-                ", createdAt=" + createdAt +
-                '}';
     }
 }
